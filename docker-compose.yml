@@ -1,0 +1,11 @@
+version: '1'
+services:
+  kafka_manager:
+    image: cmak:stable
+    network_mode: "host"
+    environment:
+      ZK_HOSTS: "localhost:2181"
+      APPLICATION_SECRET: "random-secret"
+      KAFKA_MANAGER_AUTH_ENABLED: "true"
+      KAFKA_MANAGER_USERNAME: username
+      KAFKA_MANAGER_PASSWORD: password
