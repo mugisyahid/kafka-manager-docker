@@ -53,3 +53,6 @@ KAFKA_MANAGER_PASSWORD: password
 
 If you have any problems with or questions about this image, please contact us
 through a [GitHub issue](https://github.com/hleb-albau/kafka-manager-docker/issues).
+
+docker build -t cmak
+docker run -p 6970:6970 --net=host -e ZK_HOSTS="localhost:2181" cmak:latest

@@ -8,7 +8,6 @@ RUN curl -L https://github.com/yahoo/CMAK/releases/download/${CMAK_VERSION}/cmak
     && rm -rf /tmp/cmak.zip
 
 FROM openjdk:11-jre-slim
-MAINTAINER Hleb Albau <hleb.albau@gmail.com>
 
 COPY --from=build /cmak /cmak
 
@@ -18,5 +17,5 @@ ENV JAVA_OPTS=-XX:MaxRAMPercentage=80
 
 WORKDIR /cmak
 
-ENTRYPOINT ["/cmak/bin/cmak", "-Dpidfile.path=/dev/null", "-Dapplication.home=/cmak", ""]
+ENTRYPOINT ["/cmak/bin/cmak", "-Dpidfile.path=/dev/null", "-Dapplication.home=/cmak", "-Dhttp.port=6970", ""]
 
